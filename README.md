@@ -2,6 +2,17 @@
 
 **Dart utils Extension functions**
   Flutter package for Basic dart extension functions.
+
+
+## Usage
+* To use this package
+
+```yaml
+dev_dependencies:
+  flutter_dtx:
+```
+
+
  **String Extenstions**
 
 
