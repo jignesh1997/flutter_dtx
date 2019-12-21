@@ -2,10 +2,8 @@ library flutter_dtx;
 
 import 'dart:convert';
 import 'dart:core';
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import "package:flutter/widgets.dart";
-import 'package:meta/meta.dart';
 import 'package:intl/intl.dart';
 
 extension StringExtenstions on String {

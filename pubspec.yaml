@@ -1,8 +1,8 @@
 name: flutter_dtx
 description: Dart utils Extenstion functions
 version: 0.0.1
-author: "Jignesh Shakya <Jignesh.Shakya@gmail.com>"
-homepage: "http://"
+Reviewed-by: "Jignesh Shakya <Jignesh.Shakya1997pro@gmail.com>"
+homepage: "https://github.com/jignesh1997/flutter_dtx"
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -10,9 +10,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  intl: ^0.16.0
 
 dev_dependencies:
-  intl: ^0.16.0
+
 
 
 # For information on the generic Dart part of this file, see the
