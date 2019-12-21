@@ -20,7 +20,7 @@ extension StringExtenstions on String {
   /// check whether the string is valid phone number
   bool isPhoneNumber() => RegExp(r"^[0-9]{6,14}$").hasMatch(this);
 
-  ///return true if there is only alphabets in string
+    ///return true if there is only alphabets in string
   bool isAlpha() => RegExp(r'^[a-zA-Z]+$').hasMatch(this);
 
   ///return true if there is only alphabets and numeric (no special chars $%^&*)
@@ -83,7 +83,7 @@ extension StringExtenstions on String {
   DateTime toDate({@required String format}) =>
       DateFormat(format).parse(this);
 
-  ///formate StringDate UTC
+  ///format StringDate UTC StringDate
   String formatDateStringToUTC(
       {@required String inputPattern, String outputPattern}) {
     if (outputPattern == null || outputPattern.isEmpty)
@@ -98,7 +98,7 @@ extension StringExtenstions on String {
     return DateFormat(outputPattern)
         .format(DateFormat(inputPattern).parse(this));
   }
-
+  ///parse StringDate toLocal date
   String formatDateStringToLocal(
       {@required String inputPattern, String outputPattern}) {
     if (outputPattern == null || outputPattern.isEmpty)
@@ -117,7 +117,7 @@ extension StringExtenstions on String {
   }
 
   ///divide String to List<String>
-  List<String> chunk(int sizeOfChunks) {
+  List<String> chunks(int sizeOfChunks) {
     List<String> chunks = [];
     List charList = this.toCharsList();
     int len = charList.length;
@@ -130,12 +130,12 @@ extension StringExtenstions on String {
 
   ///replace chars from start to end with delimeter eg 12345****10
   String replaceChars(
-      {int start = 0, @required int end, String delimeter = "*"}) {
+      {int start = 0, @required int end, String delimiter = "*"}) {
     StringBuffer buffer = StringBuffer();
     int counter = 0;
     this.runes.forEach((int rune) {
       if (counter >= start && counter <= end) {
-        buffer.write(delimeter);
+        buffer.write(delimiter);
       } else {
         buffer.write(String.fromCharCode(rune));
       }
@@ -159,7 +159,7 @@ extension StringExtenstions on String {
     return buffer.toString();
   }
 
-  ///compare string in case inSenstive manner
+  ///compare string in case Insensitive manner
   bool equalsIgnorecase(String compareTo) =>
       this.toLowerCase() == compareTo.toLowerCase();
 }
@@ -220,18 +220,17 @@ extension IntExtension on int {
       this,
       MaterialPageRoute(builder: (context) => destinationWidget),
     );
+  }
+  ///hide a keyboard if showing on screen
+  void hideKeyboard() {
+    FocusScope.of(this).requestFocus(FocusNode());
+  }
 
-    ///hide a keyboard if showing on screen
-    void hideKeyboard() {
-      FocusScope.of(this).requestFocus(FocusNode());
-    }
-
-    ///return a screen size
-    Size getDeviceSize() {
-      return MediaQuery
-          .of(this)
-          .size;
-    }
+  ///return a screen size
+  Size getDeviceSize() {
+    return MediaQuery
+        .of(this)
+        .size;
   }
 
   ///pops the screen with context
