@@ -1,6 +1,6 @@
 name: flutter_dtx
-description: Dart utils Extenstion functions
-version: 0.0.1
+description: Flutter package for Basic dart extension functions, can make use development speed fast 
+version: 1.0.1
 Reviewed-by: "Jignesh Shakya <Jignesh.Shakya1997pro@gmail.com>"
 homepage: "https://github.com/jignesh1997/flutter_dtx"
 

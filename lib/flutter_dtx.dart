@@ -10,15 +10,14 @@ extension StringExtenstions on String {
   //Validation function
 
   /// check whether the string is valid email or not
-  bool isEmail() =>
-      RegExp(
+  bool isEmail() => RegExp(
           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-          .hasMatch(this);
+      .hasMatch(this);
 
   /// check whether the string is valid phone number
   bool isPhoneNumber() => RegExp(r"^[0-9]{6,14}$").hasMatch(this);
 
-    ///return true if there is only alphabets in string
+  ///return true if there is only alphabets in string
   bool isAlpha() => RegExp(r'^[a-zA-Z]+$').hasMatch(this);
 
   ///return true if there is only alphabets and numeric (no special chars $%^&*)
@@ -52,16 +51,14 @@ extension StringExtenstions on String {
       new Color(int.parse(this.substring(1, 7), radix: 16) + 0xFF000000);
 
   ///Capitalize the string eg flutter to Flutter
-  String capitalize() =>
-      (this != null && this.length > 1)
-          ? this[0].toUpperCase() + this.substring(1)
-          : this != null ? this.toUpperCase() : null;
+  String capitalize() => (this != null && this.length > 1)
+      ? this[0].toUpperCase() + this.substring(1)
+      : this != null ? this.toUpperCase() : null;
 
   ///Decapitalize the string eg Flutter to flutter
-  String deCapitalize() =>
-      (this != null && this.length > 1)
-          ? this[0].toLowerCase() + this.substring(1)
-          : this != null ? this.toLowerCase() : null;
+  String deCapitalize() => (this != null && this.length > 1)
+      ? this[0].toLowerCase() + this.substring(1)
+      : this != null ? this.toLowerCase() : null;
 
   ///For Logging calls print()
   void log() => print(this);
@@ -70,16 +67,12 @@ extension StringExtenstions on String {
   Map<String, dynamic> toJsonMap() => jsonDecode(this);
 
   ///String revers
-  String revers() =>
-      String.fromCharCodes(this.runes
-          .toList()
-          .reversed);
+  String revers() => String.fromCharCodes(this.runes.toList().reversed);
 
   //date time utils
 
   ///parse String to DateTime
-  DateTime toDate({@required String format}) =>
-      DateFormat(format).parse(this);
+  DateTime toDate({@required String format}) => DateFormat(format).parse(this);
 
   ///format StringDate UTC StringDate
   String formatDateStringToUTC(
@@ -96,6 +89,7 @@ extension StringExtenstions on String {
     return DateFormat(outputPattern)
         .format(DateFormat(inputPattern).parse(this));
   }
+
   ///parse StringDate toLocal date
   String formatDateStringToLocal(
       {@required String inputPattern, String outputPattern}) {
@@ -203,8 +197,8 @@ extension IntExtension on int {
       return 'Just now';
   }
 }
- extension ContextExtension on BuildContext {
 
+extension ContextExtension on BuildContext {
   ///redirect to other screen which passed as widget
   void navigateTo(Widget destinationWidget, {bool isPushReplace = false}) {
     if (isPushReplace) {
@@ -219,6 +213,7 @@ extension IntExtension on int {
       MaterialPageRoute(builder: (context) => destinationWidget),
     );
   }
+
   ///hide a keyboard if showing on screen
   void hideKeyboard() {
     FocusScope.of(this).requestFocus(FocusNode());
@@ -226,9 +221,7 @@ extension IntExtension on int {
 
   ///return a screen size
   Size getDeviceSize() {
-    return MediaQuery
-        .of(this)
-        .size;
+    return MediaQuery.of(this).size;
   }
 
   ///pops the screen with context
@@ -236,6 +229,7 @@ extension IntExtension on int {
     Navigator.pop(this);
   }
 }
+
 ///date time formates
 //    ICU Name                   use formate
 //    --------                   --------
