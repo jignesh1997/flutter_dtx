@@ -7,6 +7,6 @@ class Example{
     "".toHexColor();
     "".isAlpha();
     "".isFloat();
-    "1234567890".isPhoneNumber();
+
   }
 }
