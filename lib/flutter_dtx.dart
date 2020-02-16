@@ -1,5 +1,6 @@
 library flutter_dtx;
 
+import 'dart:collection';
 import 'dart:convert';
 import 'dart:core';
 import 'package:flutter/material.dart';
@@ -16,9 +17,14 @@ extension StringExtenstions on String {
           .hasMatch(this);
 
   /// check whether the string is valid phone number
-  bool isPhoneNumber() => RegExp(r"^[0-9]{6,14}$").hasMatch(this);
+  bool isValidPhoneNumber({Country validInCountry}) {
+    if(this.length>= validInCountry.minLength && this.length<=validInCountry.maxLength){
+      return true;
+    }
+    return false;
+  }
 
-    ///return true if there is only alphabets in string
+  ///return true if there is only alphabets in string
   bool isAlpha() => RegExp(r'^[a-zA-Z]+$').hasMatch(this);
 
   ///return true if there is only alphabets and numeric (no special chars $%^&*)
@@ -96,6 +102,7 @@ extension StringExtenstions on String {
     return DateFormat(outputPattern)
         .format(DateFormat(inputPattern).parse(this));
   }
+
   ///parse StringDate toLocal date
   String formatDateStringToLocal(
       {@required String inputPattern, String outputPattern}) {
@@ -203,7 +210,7 @@ extension IntExtension on int {
       return 'Just now';
   }
 }
- extension ContextExtension on BuildContext {
+extension ContextExtension on BuildContext {
 
   ///redirect to other screen which passed as widget
   void navigateTo(Widget destinationWidget, {bool isPushReplace = false}) {
@@ -219,6 +226,7 @@ extension IntExtension on int {
       MaterialPageRoute(builder: (context) => destinationWidget),
     );
   }
+
   ///hide a keyboard if showing on screen
   void hideKeyboard() {
     FocusScope.of(this).requestFocus(FocusNode());
@@ -234,6 +242,12 @@ extension IntExtension on int {
   ///pops the screen with context
   void popScreen() {
     Navigator.pop(this);
+
+  }
+}
+extension on Object{
+  String getEnumName(){
+    return this.toString().split(".").last;
   }
 }
 ///date time formates
@@ -280,3 +294,72 @@ extension IntExtension on int {
 //    MINUTE                       m
 //    MINUTE_SECOND                ms
 //    SECOND                       s
+
+
+///Country phone Validation
+class PhoneNumberUtil{
+    HashMap countryMap= HashMap<String,Country>();
+   static PhoneNumberUtil instance=PhoneNumberUtil._();
+   static Country Benin,BurkinaFaso,CapeVerde,Cameroon,Canada,China,CoteDIvoire,Egypt,Finland,France,Gambia,Germany,Ghana,Greece,GuineaBissau,Guinea,India,Italy,Japan,Kenya,Liberia,Libya,Malawi,Malaysia,Mali,Mauritania,Morocco,Niger,Nigeria,NorthKorea,Russia,SaudiArabia,Senegal,SierraLeone,SouthAfrica,SouthKorea,Spain,Sweden,Switzerland,Togo,Ukraine,UnitedArabEmirate,UnitedKingdom,UnitedStates;
+
+   static List<Country> getAllCountry(){
+     return instance.countryMap.values;
+   }
+   PhoneNumberUtil._(){
+     initMap();
+   }
+    void initMap(){
+     countryMap["BJ"]=Benin=Country("Benin Republic","BJ",229,8,8);
+     countryMap["BF"]=BurkinaFaso=Country("Burkina Faso","BF",226,8,8);
+     countryMap["CV"]=CapeVerde=Country("Cape Verde","CV",238,7,7);
+     countryMap["CM"]=Cameroon=Country("Cameroon","CM",237,8,8);
+     countryMap["CA"]=Canada=Country("Canada","CA",1,10,10);
+     countryMap["CN"]=China=Country("China","CN",86,11,11);
+     countryMap["CI"]=CoteDIvoire=Country("Cote d'Ivoire","CI",225,8,8);
+     countryMap["EG"]=Egypt=Country("Egpyt","EG",20,9,10);
+     countryMap["FI"]=Finland=Country("Finland","FI",358,6,11);
+     countryMap["FR"]=France=Country("France","FR",33,9,9);
+     countryMap["GM"]=Gambia=Country("Gambia","GM",220,7,7);
+     countryMap["DE"]=Germany=Country("Germany","DE",49,7,12);
+     countryMap["GH"]=Ghana=Country("Ghana","GH",233,9,9);
+     countryMap["GR"]=Greece=Country("Greece","GR",30,10,10);
+     countryMap["GW"]=GuineaBissau=Country("Guinea Bissau","GW",245,7,7);
+     countryMap["GN"]=Guinea=Country("Guinea","GN",224,8,9);
+     countryMap["IN"]=India=Country("India","IN",91,10,10);
+     countryMap["IT"]=Italy=Country("Italy","IT",39,9,10);
+     countryMap["JP"]=Japan=Country("Japan","JP",81,10,10);
+     countryMap["KE"]=Kenya=Country("Kenya","KE",254,9,9);
+     countryMap["LR"]=Liberia=Country("Liberia","LR",231,7,9);
+     countryMap["LY"]=Libya=Country("Libya","LY",218,9,9);
+     countryMap["MW"]=Malawi=Country("Malawi","MW",265,9,9);
+     countryMap["MY"]=Malaysia=Country("Malaysia","MY",60,9,10);
+     countryMap["ML"]=Mali=Country("Mali","ML",223,8,8);
+     countryMap["MR"]=Mauritania=Country("Mauritania","MR",222,8,8);
+     countryMap["MA"]=Morocco=Country("Morocco","MA",212,9,9);
+     countryMap["NE"]=Niger=Country("Niger","NE",227,8,8);
+     countryMap["NG"]=Nigeria=Country("Nigeria","NG",234,10,10);
+     countryMap["KP"]=NorthKorea=Country("North Korea","KP",850,10,10);
+     countryMap["RU"]=Russia=Country("Russia","RU",7,10,10);
+     countryMap["SA"]=SaudiArabia=Country("Saudi Arabia","SA",966,9,9);
+     countryMap["SN"]=Senegal=Country("Senegal","SN",221,9,9);
+     countryMap["SL"]=SierraLeone=Country("Sierra Leone","SL",232,8,8);
+     countryMap["ZA"]=SouthAfrica=Country("South Africa","ZA",27,9,9);
+     countryMap["KR"]=SouthKorea=Country("South Korea","KR",82,9,10);
+     countryMap["ES"]=Spain=Country("Spain","ES",34,9,9);
+     countryMap["SE"]=Sweden=Country("Sweden","SE",46,9,9);
+     countryMap["CH"]=Switzerland=Country("Switzerland","CH",41,9,9);
+     countryMap["TG"]=Togo=Country("Togo","TG",228,8,8);
+     countryMap["UA"]=Ukraine=Country("Ukraine","UA",380,9,9);
+     countryMap["AE"]=UnitedArabEmirate=Country("United Arab Emirate","AE",971,10,10);
+     countryMap["GB"]=UnitedKingdom=Country("United Kingdom","GB",44,10,10);
+     countryMap["US"]=UnitedStates=Country("United States","US",1,10,10);
+   }
+}
+
+class Country {
+  PhoneNumberUtil xu=PhoneNumberUtil._();
+  String name, iso;
+  int countryCode, maxLength, minLength;
+  Country(this.name,  this.iso, this.countryCode,this.minLength,  this.maxLength);
+
+}
