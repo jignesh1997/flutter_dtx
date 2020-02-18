@@ -293,7 +293,7 @@ extension on Object{
 class PhoneNumberUtil{
     HashMap countryMap= HashMap<String,Country>();
    static PhoneNumberUtil instance=PhoneNumberUtil._();
-   static Country Benin,BurkinaFaso,CapeVerde,Cameroon,Canada,China,CoteDIvoire,Egypt,Finland,France,Gambia,Germany,Ghana,Greece,GuineaBissau,Guinea,India,Italy,Japan,Kenya,Liberia,Libya,Malawi,Malaysia,Mali,Mauritania,Morocco,Niger,Nigeria,NorthKorea,Russia,SaudiArabia,Senegal,SierraLeone,SouthAfrica,SouthKorea,Spain,Sweden,Switzerland,Togo,Ukraine,UnitedArabEmirate,UnitedKingdom,UnitedStates;
+   static Country benin,burkinafaso,capeverde,cameroon,canada,china,cotedivoire,egypt,finland,france,gambia,germany,ghana,greece,guineabissau,guinea,india,italy,japan,kenya,liberia,libya,malawi,malaysia,mali,mauritania,morocco,niger,nigeria,northkorea,russia,saudiarabia,senegal,sierraleone,southafrica,southkorea,spain,sweden,switzerland,togo,ukraine,unitedarabemirate,unitedkingdom,unitedstates;
 
    static List<Country> getAllCountry(){
      return instance.countryMap.values;
@@ -302,50 +302,50 @@ class PhoneNumberUtil{
      initMap();
    }
     void initMap(){
-     countryMap["BJ"]=Benin=Country("Benin Republic","BJ",229,8,8);
-     countryMap["BF"]=BurkinaFaso=Country("Burkina Faso","BF",226,8,8);
-     countryMap["CV"]=CapeVerde=Country("Cape Verde","CV",238,7,7);
-     countryMap["CM"]=Cameroon=Country("Cameroon","CM",237,8,8);
-     countryMap["CA"]=Canada=Country("Canada","CA",1,10,10);
-     countryMap["CN"]=China=Country("China","CN",86,11,11);
-     countryMap["CI"]=CoteDIvoire=Country("Cote d'Ivoire","CI",225,8,8);
-     countryMap["EG"]=Egypt=Country("Egpyt","EG",20,9,10);
-     countryMap["FI"]=Finland=Country("Finland","FI",358,6,11);
-     countryMap["FR"]=France=Country("France","FR",33,9,9);
-     countryMap["GM"]=Gambia=Country("Gambia","GM",220,7,7);
-     countryMap["DE"]=Germany=Country("Germany","DE",49,7,12);
-     countryMap["GH"]=Ghana=Country("Ghana","GH",233,9,9);
-     countryMap["GR"]=Greece=Country("Greece","GR",30,10,10);
-     countryMap["GW"]=GuineaBissau=Country("Guinea Bissau","GW",245,7,7);
-     countryMap["GN"]=Guinea=Country("Guinea","GN",224,8,9);
-     countryMap["IN"]=India=Country("India","IN",91,10,10);
-     countryMap["IT"]=Italy=Country("Italy","IT",39,9,10);
-     countryMap["JP"]=Japan=Country("Japan","JP",81,10,10);
-     countryMap["KE"]=Kenya=Country("Kenya","KE",254,9,9);
-     countryMap["LR"]=Liberia=Country("Liberia","LR",231,7,9);
-     countryMap["LY"]=Libya=Country("Libya","LY",218,9,9);
-     countryMap["MW"]=Malawi=Country("Malawi","MW",265,9,9);
-     countryMap["MY"]=Malaysia=Country("Malaysia","MY",60,9,10);
-     countryMap["ML"]=Mali=Country("Mali","ML",223,8,8);
-     countryMap["MR"]=Mauritania=Country("Mauritania","MR",222,8,8);
-     countryMap["MA"]=Morocco=Country("Morocco","MA",212,9,9);
-     countryMap["NE"]=Niger=Country("Niger","NE",227,8,8);
-     countryMap["NG"]=Nigeria=Country("Nigeria","NG",234,10,10);
-     countryMap["KP"]=NorthKorea=Country("North Korea","KP",850,10,10);
-     countryMap["RU"]=Russia=Country("Russia","RU",7,10,10);
-     countryMap["SA"]=SaudiArabia=Country("Saudi Arabia","SA",966,9,9);
-     countryMap["SN"]=Senegal=Country("Senegal","SN",221,9,9);
-     countryMap["SL"]=SierraLeone=Country("Sierra Leone","SL",232,8,8);
-     countryMap["ZA"]=SouthAfrica=Country("South Africa","ZA",27,9,9);
-     countryMap["KR"]=SouthKorea=Country("South Korea","KR",82,9,10);
-     countryMap["ES"]=Spain=Country("Spain","ES",34,9,9);
-     countryMap["SE"]=Sweden=Country("Sweden","SE",46,9,9);
-     countryMap["CH"]=Switzerland=Country("Switzerland","CH",41,9,9);
-     countryMap["TG"]=Togo=Country("Togo","TG",228,8,8);
-     countryMap["UA"]=Ukraine=Country("Ukraine","UA",380,9,9);
-     countryMap["AE"]=UnitedArabEmirate=Country("United Arab Emirate","AE",971,10,10);
-     countryMap["GB"]=UnitedKingdom=Country("United Kingdom","GB",44,10,10);
-     countryMap["US"]=UnitedStates=Country("United States","US",1,10,10);
+     countryMap["BJ"]=benin=Country("Benin Republic","BJ",229,8,8);
+     countryMap["BF"]=burkinafaso=Country("Burkina Faso","BF",226,8,8);
+     countryMap["CV"]=capeverde=Country("Cape Verde","CV",238,7,7);
+     countryMap["CM"]=cameroon=Country("Cameroon","CM",237,8,8);
+     countryMap["CA"]=canada=Country("Canada","CA",1,10,10);
+     countryMap["CN"]=china=Country("China","CN",86,11,11);
+     countryMap["CI"]=cotedivoire=Country("Cote d'Ivoire","CI",225,8,8);
+     countryMap["EG"]=egypt=Country("Egpyt","EG",20,9,10);
+     countryMap["FI"]=finland=Country("Finland","FI",358,6,11);
+     countryMap["FR"]=france=Country("France","FR",33,9,9);
+     countryMap["GM"]=gambia=Country("Gambia","GM",220,7,7);
+     countryMap["DE"]=germany=Country("Germany","DE",49,7,12);
+     countryMap["GH"]=ghana=Country("Ghana","GH",233,9,9);
+     countryMap["GR"]=greece=Country("Greece","GR",30,10,10);
+     countryMap["GW"]=guineabissau=Country("Guinea Bissau","GW",245,7,7);
+     countryMap["GN"]=guinea=Country("Guinea","GN",224,8,9);
+     countryMap["IN"]=india=Country("India","IN",91,10,10);
+     countryMap["IT"]=italy=Country("Italy","IT",39,9,10);
+     countryMap["JP"]=japan=Country("Japan","JP",81,10,10);
+     countryMap["KE"]=kenya=Country("Kenya","KE",254,9,9);
+     countryMap["LR"]=liberia=Country("Liberia","LR",231,7,9);
+     countryMap["LY"]=libya=Country("Libya","LY",218,9,9);
+     countryMap["MW"]=malawi=Country("Malawi","MW",265,9,9);
+     countryMap["MY"]=malaysia=Country("Malaysia","MY",60,9,10);
+     countryMap["ML"]=mali=Country("Mali","ML",223,8,8);
+     countryMap["MR"]=mauritania=Country("Mauritania","MR",222,8,8);
+     countryMap["MA"]=morocco=Country("Morocco","MA",212,9,9);
+     countryMap["NE"]=niger=Country("Niger","NE",227,8,8);
+     countryMap["NG"]=nigeria=Country("Nigeria","NG",234,10,10);
+     countryMap["KP"]=northkorea=Country("North Korea","KP",850,10,10);
+     countryMap["RU"]=russia=Country("Russia","RU",7,10,10);
+     countryMap["SA"]=saudiarabia=Country("Saudi Arabia","SA",966,9,9);
+     countryMap["SN"]=senegal=Country("Senegal","SN",221,9,9);
+     countryMap["SL"]=sierraleone=Country("Sierra Leone","SL",232,8,8);
+     countryMap["ZA"]=southafrica=Country("South Africa","ZA",27,9,9);
+     countryMap["KR"]=southkorea=Country("South Korea","KR",82,9,10);
+     countryMap["ES"]=spain=Country("Spain","ES",34,9,9);
+     countryMap["SE"]=sweden=Country("Sweden","SE",46,9,9);
+     countryMap["CH"]=switzerland=Country("Switzerland","CH",41,9,9);
+     countryMap["TG"]=togo=Country("Togo","TG",228,8,8);
+     countryMap["UA"]=ukraine=Country("Ukraine","UA",380,9,9);
+     countryMap["AE"]=unitedarabemirate=Country("United Arab Emirate","AE",971,10,10);
+     countryMap["GB"]=unitedkingdom=Country("United Kingdom","GB",44,10,10);
+     countryMap["US"]=unitedstates=Country("United States","US",1,10,10);
    }
 }
 
