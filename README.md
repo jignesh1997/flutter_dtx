@@ -17,7 +17,7 @@ dev_dependencies:
 
 
  1. **isEmail()** check whether the string is valid email or not
- 2. **isPhoneNumber()** check whether the string is valid phone number
+ 2. **isPhoneNumber()** check whether the string is valid phone number. (can able to validate for Specific  Country code)
  3. **isAlpha()** return true if there is only alphabets in string
  4.  **isAlphaNumeric()**  return true if there is only alphabets and numeric (no special chars $%^&*)
  5. **isNumeric()** return true if there is only numeric values in string eg 12345 or 1.22
@@ -43,8 +43,12 @@ dev_dependencies:
 
  **Int Extensions**
 
- 1. **getDateFromMillis()** pares int to DateTime (int should be millis)
+ 1. **getDateFromMillis()** Parse int to DateTime (int should be millis)
  2. **timeAgoString()** returns ago time based on Millis
+ 
+ **Object Extensions**
+ 
+  1. **getEnumName()** returns the name of Enum Object (Separates enum class name with Object)
 
  **Context Extensions**
 
